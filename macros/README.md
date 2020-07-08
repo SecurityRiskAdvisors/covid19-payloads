@@ -16,7 +16,7 @@
 
 1. change URL in patchwork.scr to some arbitrary link (will be downloaded)
 2. upload patchwork.scr file to some HTTP(S) site (e.g. gist.github.com)
-3. create Excel doc and add URL from step 1 in cell A1
+3. create Excel doc and add URL from step 2 in cell A1
 4. Save a document containing the patchwork.vba macro
 
 ### Schutzwerk
@@ -30,9 +30,9 @@
 ### Gamaredon
 
 1. Change URL in gamaredon.vba (anything benign will work - no data is being exfiltrated)
-2. Save a document (.doc/.docm) containing the gamaredon.vba macro as template and upload to some HTTP(S) site	
+2. Save a document containing the gamaredon.vba macro as template (.dotm) and upload to some HTTP(S) site	
 	- the macro uses MSXML to make HTTP requests -> in the macro editor, add a reference to "Microsoft XML, v6.0" (Tools -> References)
-3. Set the URL to the document from step 2 as the template URL in a new document
+3. Set the URL to the document from step 2 as the template URL in a new document (Developer -> Document Template)
 
 ### Talos
 
@@ -78,7 +78,7 @@
 	- both ta505.cpp and ta505.h should be in the same folder
 	- cl.exe is the Microsoft C++ compiler/linker; it can be downloaded from Microsoft here: https://visualstudio.microsoft.com/visual-cpp-build-tools/ 
 	- this will generate ta505.dll
-2. Create a new .xls file and embed the dll from step 1 into as an object
+2. Create a new .xls file and embed the dll from step 1 into as an object (insert -> text dropdown -> object -> create from file)
 3. Base64 the .xls from step 2 and perform same chunking as in Konni step 3 and step 4 but for the ta505.vba macro
 4. Save an Execel (.xls/.xlsm) containing the edited ta505.vba macro
 
