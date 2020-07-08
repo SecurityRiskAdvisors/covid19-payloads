@@ -44,5 +44,5 @@ Private Function DecodeBase64(ByVal strData As String) As Byte()
     Set objXML = Nothing
 End Function
 Sub Document_open()
-    abc
+    main
 End Sub
